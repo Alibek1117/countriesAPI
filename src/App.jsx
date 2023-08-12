@@ -1,7 +1,19 @@
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Countries from "./pages/Countries";
+import Header from "./components/Header";
+import SingleCountry from "./pages/SingleCountry";
+import './App.css'
+
 function App() {
   return (
     <>
-      <h1>Hello</h1>
+      <BrowserRouter>
+      <Header/>
+      <Routes>
+        <Route path="/" element ={<Countries/>}/>
+        <Route path="/single-country/:name" element ={<SingleCountry/>}/>
+      </Routes>
+      </BrowserRouter>
     </>
   );
 }
